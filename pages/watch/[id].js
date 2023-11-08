@@ -1,19 +1,19 @@
 import Link from "next/link"
 import { useRouter } from "next/router"
-// import styles from "../../styles/post.module.css"
+import styles from "../../styles/post.module.css"
 
-export default function Post(props) {
+export default function Result(props) {
     const router = useRouter()
     return (
         <>
             <p>
-                <Link href="/blog">
+                <Link href="/watch">
                     <small>&laquo; back to all blog posts</small>
                 </Link>
             </p>
-            <h2>{props.post.title}</h2>
-            <p>{props.post.content}</p>
-            <button onClick={() => router.push("/blog")}>
+            <h2 className={styles.title}>{props.results.title}</h2>
+            <p>{props.results.content}</p>
+            <button className={styles.button} onClick={() => router.push("/blog")}>
                 Click me to programmatically navigate or redirect
             </button>
         </>
@@ -21,11 +21,11 @@ export default function Post(props) {
 }
 
 export async function getStaticPaths() {
-    const response = await fetch("https://learnwebcode.github.io/json-example/posts.json")
+    const response = await fetch(`https://api.consumet.org/anime/zoro/${query}?page=${pageNumber}`)
     const data = await response.json()
 
-    const thePaths = data.posts.map(pet => {
-        return { params: { slug: pet.slug } }
+    const thePaths = data.results.map(pet => {
+        return { params: { id: pet.id } }
     })
 
     return {
