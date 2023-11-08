@@ -50,6 +50,7 @@ export default function Watch() {
                                 <td>{item.title}</td>
                                 <td>
                                     <img className="anime-img" src={item.image} alt={item.title} />
+                                    <a href={item.url}>Link</a>
                                 </td>
                             </tr>
                         ))
