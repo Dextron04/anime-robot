@@ -3,6 +3,7 @@ import React, { useState, useEffect } from "react";
 import '../styles/post.module.css';
 import 'bootstrap/dist/css/bootstrap.css';
 import Image from "next/image";
+import { ClimbingBoxLoader } from "react-spinners";
 
 export default function Watch() {
     const [inputText, setInputText] = useState(' ');
@@ -70,7 +71,13 @@ export default function Watch() {
                             </div>
                         </div>
                     ))
-                ) : <p>No data available</p>
+                ) : <ClimbingBoxLoader color="white" style={{
+                    position: "absolute",
+                    top: '12em',
+                    left: '30em',
+                    fontSize: '23px'
+                }
+                } />
                 }
             </div>
 
