@@ -1,15 +1,36 @@
-import Link from "next/link"
 import { useRouter } from "next/router"
 import 'bootstrap/dist/css/bootstrap.css';
-import { use, useEffect, useState } from "react";
+import { useRef, useEffect, useState } from "react";
 import { ClimbingBoxLoader } from "react-spinners";
+import videojs from "video.js";
+import "video.js/dist/video-js.css";
+import ReactPlayer from "react-player";
+import { TheosPlayer } from "@aka_theos/react-hls-player";
+
+
 
 
 export default function Episode() {
     const router = useRouter();
     const { id } = router.query;
     const [episode, setEpisode] = useState(null);
+    const [episodeId, setEpisodeId] = useState(null);
     const [link, setLink] = useState(null);
+
+    // const play = {
+    //     fill: true,
+    //     fluid: true,
+    //     autoplay: true,
+    //     controls: true,
+    //     preload: "metadata",
+    //     sources: [
+    //         {
+    //             src:
+    //                 anime,
+    //             type: "application/x-mpegURL"
+    //         }
+    //     ]
+    // };
 
     useEffect(() => {
         // Fetch episode data based on the ID
@@ -20,12 +41,12 @@ export default function Episode() {
                 setEpisode(data); // Update the episode state with the fetched data
 
 
-                const linkResponse = await fetch(`https://api.consumet.org/anime/zoro/watch/${id}?server=vidcloud`);
+                const linkResponse = await fetch(`https://consumet-api-rust.vercel.app/anime/zoro/watch?episodeId=${episodeId}&server=vidstreaming`);
+                console.log(episodeId);
                 const linkData = await linkResponse.json();
-                setLink(linkData);
-                console.log("success!")
-                // console.log(data);
+                setLink(linkData.sources[0].url);
                 console.log(linkData);
+                console.log(link);
             } catch (error) {
                 console.error('Error fetching episode data:', error);
             }
@@ -34,7 +55,8 @@ export default function Episode() {
         if (id) {
             fetchEpisodeData(); // Fetch data when the ID is available
         }
-    }, [id]);
+    }, [episodeId, id, link]);
+
 
     if (!episode) {
         // Handle the case when episode is null (not fetched yet)
@@ -47,6 +69,11 @@ export default function Episode() {
         } />
     }
 
+    const handleId = (id) => {
+        setEpisodeId(id);
+        console.log(episodeId);
+    }
+
     return (
         <div>
             <h1>{episode.title}</h1>
@@ -57,17 +84,40 @@ export default function Episode() {
                 top: '-20em'
             }}>
                 {episode.episodes.map((episodeData) => (
-                    <div key={episode.id} className="container text-center">
+                    <div key={episodeData.id} className="container text-center">
                         <div className="row row-cols-auto">
                             <div className="col">{episodeData.number}</div>
-                            <div className="col">{episodeData.id}</div>
+                            <button className="col" onClick={() => handleId(episodeData.id)}>{episodeData.id}</button>
                         </div>
                     </div>
                 ))}
             </div>
+            {link && <TheosPlayer src={link} autoPlay={false} />}
+            {/* <Video {...play} /> */}
         </div>
     );
 }
+const Video = (props) => {
+    const videoNode = useRef(null);
+    const [player, setPlayer] = useState(null);
+    useEffect(() => {
+        if (videoNode.current) {
+            const _player = videojs(videoNode.current, props);
+            setPlayer(_player);
+            return () => {
+                if (player !== null) {
+                    player.dispose();
+                }
+            };
+        }
+    }, []);
+
+    return (
+        <div data-vjs-player>
+            <video ref={videoNode} className="video-js"></video>
+        </div>
+    );
+};
 
 // {episode.episodes.map((episodeData) => (
 //     <tr key={episodeData.id}>
