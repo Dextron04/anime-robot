@@ -35,3 +35,8 @@ body {
     font-size: 0.75rem;
 }
 
+.table {
+    left: 504px;
+    top: -397px;
+    position: relative;
+}

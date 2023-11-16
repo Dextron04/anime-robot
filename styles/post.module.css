@@ -28,8 +28,8 @@
     /* Add spacing between items */
 }
 
-.table img {
-    width: 48px;
-    height: 48px;
-    object-fit: cover;
+.table {
+    left: 504px;
+    top: -397px;
+    position: relative;
 }
