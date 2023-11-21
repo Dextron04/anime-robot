@@ -20,7 +20,7 @@ export default function Episode() {
         // Fetch episode data based on the ID
         async function fetchEpisodeData() {
             try {
-                const response = await fetch(`https://api.consumet.org/anime/zoro/info?id=${id}`); // Replace with your API endpoint
+                const response = await fetch(`https://consumet-api-rust.vercel.app/anime/zoro/info?id=${id}`); // Replace with your API endpoint
                 const data = await response.json();
                 setEpisode(data); // Update the episode state with the fetched data
 

@@ -5,6 +5,7 @@ import 'bootstrap/dist/css/bootstrap.css';
 import Image from "next/image";
 import { ClimbingBoxLoader } from "react-spinners";
 
+
 export default function Watch() {
     const [inputText, setInputText] = useState(' ');
     const [data, setData] = useState({ results: [] });
@@ -19,7 +20,7 @@ export default function Watch() {
 
     useEffect(() => {
         console.log(inputText);
-        fetch(`https://api.consumet.org/anime/zoro/${inputText}?page=1`)
+        fetch(`https://consumet-api-rust.vercel.app/anime/zoro/${inputText}?page=1`)
             .then((response) => response.json())
             .then((jsonData) => {
                 setData(jsonData);
@@ -33,7 +34,7 @@ export default function Watch() {
 
 
         // Fetching anime info
-        fetch(`https://api.consumet.org/anime/zoro/info?id=${id}`)
+        fetch(`https://consumet-api-rust.vercel.app/anime/zoro/info?id=${id}`)
             .then((response) => response.json())
             .then((animeData) => {
                 setAnimeData(animeData);
@@ -43,7 +44,7 @@ export default function Watch() {
                 console.error('Error fetching data:', error);
             });
 
-    }, [inputText])
+    }, [data.results, id, inputText])
 
     const style = {
         width: '300px',
@@ -55,7 +56,7 @@ export default function Watch() {
                 Watch
             </h1>
             <h4>
-                <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search" value={inputText} onChange={handleSearch} style={{ width: '25%' }} />
+                <input id="search" className="form-control me-2" type="search" placeholder="Search" aria-label="Search" value={inputText} onChange={handleSearch} style={{ width: '100%' }} />
             </h4>
             <div className="row" >
                 {Array.isArray(data.results) && data.results.length > 0 ? (

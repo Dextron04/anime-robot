@@ -33,3 +33,10 @@
     top: -397px;
     position: relative;
 }
+
+
+@media only screen and (min-width: 1024px) {
+    #search {
+        width: 86%;
+    }
+}
