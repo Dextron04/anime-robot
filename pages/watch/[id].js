@@ -91,6 +91,8 @@ export default function Episode() {
                         />
                     )}
                 </div>
+                <br />
+                <br />
                 <div className="container text-center">
                     <div className="d-flex flex-wrap justify-content-center">
                         {episode.episodes.map((episodeData, index) => (
