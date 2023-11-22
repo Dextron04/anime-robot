@@ -3,6 +3,8 @@ import 'bootstrap/dist/css/bootstrap.css';
 import { useRef, useEffect, useState } from "react";
 import { ClimbingBoxLoader } from "react-spinners";
 import ReactPlayer from "react-player";
+import { Image } from "react-bootstrap";
+import React from "react";
 
 
 
@@ -62,10 +64,12 @@ export default function Episode() {
         console.log(episodeId);
     };
 
+    const buttonsPerRow = 9;
+
     return (
         <div>
             <h1>{episode.title}</h1>
-            <img src={episode.image} alt={episode.title} />
+            <Image className="rounded" src={episode.image} alt={episode.title} />
             <div>
                 <div style={{
                     position: "absolute",
@@ -87,14 +91,18 @@ export default function Episode() {
                         />
                     )}
                 </div>
-                {episode.episodes.map((episodeData) => (
-                    <div key={episodeData.id} className="container text-center">
-                        <div className="row row-cols-auto">
-                            {/* <div className="col">{episodeData.number}</div> */}
-                            <button className="col" onClick={() => handleId(episodeData.id)}>{episodeData.number}</button>
-                        </div>
+                <div className="container text-center">
+                    <div className="d-flex flex-wrap justify-content-center">
+                        {episode.episodes.map((episodeData, index) => (
+                            <React.Fragment key={episodeData.id}>
+                                {(index > 0 && index % buttonsPerRow === 0) && <div className="w-100"></div>}
+                                <button className="btn btn-light mx-2 my-2" onClick={() => handleId(episodeData.id)}>
+                                    {episodeData.number}
+                                </button>
+                            </React.Fragment>
+                        ))}
                     </div>
-                ))}
+                </div>
             </div>
         </div>
     );

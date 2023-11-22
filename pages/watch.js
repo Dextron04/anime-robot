@@ -74,9 +74,9 @@ export default function Watch() {
                     ))
                 ) : <ClimbingBoxLoader color="white" style={{
                     position: "absolute",
-                    top: '12em',
-                    left: '30em',
-                    fontSize: '23px'
+                    top: '14em',
+                    left: '1em',
+                    fontSize: '23px',
                 }
                 } />
                 }

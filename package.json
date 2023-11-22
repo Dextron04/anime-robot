@@ -11,6 +11,8 @@
   "dependencies": {
     "@aka_theos/react-hls-player": "^1.0.0",
     "@consumet/extensions": "^1.5.2",
+    "@emotion/react": "^11.11.1",
+    "@emotion/styled": "^11.11.0",
     "@mantine/carousel": "^7.2.2",
     "@mantine/code-highlight": "^7.2.2",
     "@mantine/core": "^7.2.2",
@@ -23,6 +25,7 @@
     "@mantine/nprogress": "^7.2.2",
     "@mantine/spotlight": "^7.2.2",
     "@mantine/tiptap": "^7.2.2",
+    "@mui/material": "^5.14.18",
     "@tabler/icons-react": "^2.41.0",
     "@tiptap/extension-link": "^2.1.12",
     "@tiptap/react": "^2.1.12",
