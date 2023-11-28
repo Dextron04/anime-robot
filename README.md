@@ -1,6 +1,5 @@
 # Welcome to Anime Robot!
 
-![Anime Robot Logo]([https://emojipedia.org/microsoft-teams/15.0/robot](https://em-content.zobj.net/source/microsoft-teams/363/robot_1f916.png))
 
 Greetings, anime enthusiasts and tech aficionados! 🤖🌟
 
