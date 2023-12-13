@@ -3,6 +3,7 @@ import Link from "next/link"
 import { useRouter } from "next/router"
 import 'bootstrap/dist/css/bootstrap.css'
 import { useEffect } from "react";
+import { SpeedInsights } from "@vercel/speed-insights/next"
 import './watch';
 
 
@@ -45,6 +46,7 @@ export default function App({ Component, pageProps }) {
                         </div>
                     </nav>
                 </h1>
+                <SpeedInsights />
             </div>
             <Component {...pageProps} />
             <footer style={{
