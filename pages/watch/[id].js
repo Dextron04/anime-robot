@@ -2,13 +2,10 @@ import { useRouter } from "next/router"
 import 'bootstrap/dist/css/bootstrap.css';
 import { useRef, useEffect, useState } from "react";
 import { ClimbingBoxLoader } from "react-spinners";
-import ReactPlayer from "react-player";
-import { Image } from "react-bootstrap";
 import React from "react";
 import AnimeInfo from "../../components/AnimeInfo";
 import styles from '../../styles/anime.module.css'
-import { Button } from "@mui/material";
-import { style } from "@mui/system";
+import Player from "../../components/Player";
 
 
 
@@ -63,33 +60,11 @@ export default function Episode() {
         console.log(episodeId);
     };
 
-    const buttonsPerRow = 9;
-
     return (
         <div>
             <div className={styles.anime_wrapper}>
                 <AnimeInfo title={episode.title} description={episode.description} image={episode.image} />
-                <div >
-                    {subtitles && link && (
-                        <ReactPlayer
-                            width='100%'
-                            height='100%'
-                            url={link}
-                            playing={true}
-                            muted={true}
-                            loop={true}
-                            controls
-                            config={{
-                                file: {
-                                    // attributes: {
-                                    //     crossOrigin: "",
-                                    // },
-                                    tracks: subTitleTracks,
-                                },
-                            }}
-                        />
-                    )}
-                </div>
+                <Player subTitleTracks={subTitleTracks} link={link} subtitles={subtitles} />
             </div>
             <div>
                 <br />
@@ -98,7 +73,6 @@ export default function Episode() {
                     <div className={styles.episode_wrapper}>
                         {episode.episodes.map((episodeData, index) => (
                             <React.Fragment key={episodeData.id}>
-                                {/* {(index > 0 && index % buttonsPerRow === 0) && <div className="w-100"></div>} */}
                                 <button type="button" className="btn btn-light" onClick={() => handleId(episodeData.id)}>
                                     {episodeData.number}
                                 </button>

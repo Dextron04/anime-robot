@@ -47,3 +47,20 @@
                 } />
                 }
             </div> */}
+
+Old Nav Bar
+
+<!-- FILEPATH: /Users/tushinkulshreshtha/anime-robot/old.txt -->
+<!-- BEGIN: ed8c6549bwf9 -->
+<ul className="navbar-nav me-auto mb-2 mb-lg-0">
+    <li className="nav-item">
+        <Link className={router.pathname == "/" ? "nav-link active" : "nav-link"} href="/">Home</Link>
+    </li>
+    <li className="nav-item">
+        <Link className={router.pathname == "/about" ? "nav-link active" : "nav-link"} href="/about">About</Link>
+    </li>
+    <li className="nav-item" >
+        <Link className={router.pathname == "/watch" ? "nav-link active" : "nav-link"} href="/watch">Watch</Link>
+    </li>
+</ul>
+<!-- END: ed8c6549bwf9 -->
