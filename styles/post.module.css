@@ -1,42 +1,17 @@
-.button {
-    background-color: blue;
-    padding: 10px;
-    border-radius: 5px;
-    border: none;
-    box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.2);
-    color: white;
-    font-weight: bold;
+.container {
+    display: grid;
+    grid-template-columns: repeat(3, 30em);
+    gap: 40px;
+    justify-content: center;
 }
 
-.title {
-    font-weight: normal;
-    font-size: 3rem;
-    margin: 32px 0;
-    line-height: 1;
-}
+@media (max-width: 778px) {
 
-.horizontal-list {
-    display: flex;
-    overflow-x: auto;
-    /* Add horizontal scrolling if needed for smaller screens */
-}
-
-.horizontal-item {
-    flex: 0 0 auto;
-    /* Allow items to grow, but don't shrink or expand */
-    margin-right: 20px;
-    /* Add spacing between items */
-}
-
-.table {
-    left: 504px;
-    top: -397px;
-    position: relative;
-}
-
-
-@media only screen and (min-width: 1024px) {
-    #search {
-        width: 86%;
+    /* Add mobile-specific styles here */
+    .container {
+        display: grid;
+        grid-template-columns: repeat(1, 20em);
+        gap: 40px;
+        justify-content: center;
     }
 }

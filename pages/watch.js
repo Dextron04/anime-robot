@@ -1,9 +1,8 @@
 import Link from "next/link";
 import React, { useState, useEffect } from "react";
-import '../styles/post.module.css';
-import 'bootstrap/dist/css/bootstrap.css';
-import Image from "next/image";
 import { ClimbingBoxLoader } from "react-spinners";
+import Card from "../components/Card";
+import styles from '../styles/post.module.css'
 
 
 export default function Watch() {
@@ -46,61 +45,36 @@ export default function Watch() {
 
     }, [data.results, id, inputText])
 
-    const style = {
-        width: '300px',
-    }
-
     return (
-        <div data-bs-theme="dark">
+        <div>
             <h1>
                 Watch
             </h1>
             <h4>
                 <input id="search" className="form-control me-2" type="search" placeholder="Search" aria-label="Search" value={inputText} onChange={handleSearch} style={{ width: '100%' }} />
             </h4>
-            <div className="row" >
+            <div className={styles.container}>
                 {Array.isArray(data.results) && data.results.length > 0 ? (
                     data.results.map((item) => (
-                        <div key={item.id} className="col-lg-4 col-md-6 col-sm-12">
-                            <div className="card" style={style}>
-                                <img src={item.image} className="card-img-top" alt={item.title} />
-                                <div className="card-body">
-                                    <h5 className="card-title">{item.title}</h5>
-                                    {/* <p className="card-text">{animeData.description}</p> */}
-                                    <a href={`/watch/${item.id}`} className="btn btn-primary">Go To Anime</a>
-                                </div>
-                            </div>
+                        <div key={item.id} >
+                            <Card title={item.title} imageSrc={item.image} id={item.id} />
+
                         </div>
                     ))
                 ) : <ClimbingBoxLoader color="white" style={{
-                    position: "absolute",
-                    top: '14em',
-                    left: '1em',
+                    position: "relative",
+                    top: '8em',
+                    left: '0em',
                     fontSize: '23px',
                 }
                 } />
                 }
             </div>
-
-        </div >
+        </div>
     )
 }
 
-// {Array.isArray(data.results) && data.results.length > 0 ? (
-//     data.results.map((item) => (
-//         <tr key={item.id}>
-//             <td><Link href={`/watch/${item.id}`}>{item.title}</Link></td>
-//             <td>
-//                 <Image className="anime-img" src={item.image} alt={item.title} width={300} height={300} />
-//                 <a href={item.url}>Link</a>
-//             </td>
-//         </tr>
-//     ))
-// ) : (
-//     <tr>
-//         <td colSpan="3">No data available.</td>
-//     </tr>
-// )}
+
 
 
 

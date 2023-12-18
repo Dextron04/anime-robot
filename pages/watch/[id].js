@@ -5,6 +5,7 @@ import { ClimbingBoxLoader } from "react-spinners";
 import ReactPlayer from "react-player";
 import { Image } from "react-bootstrap";
 import React from "react";
+import AnimeInfo from "../../components/AnimeInfo";
 
 
 
@@ -68,8 +69,7 @@ export default function Episode() {
 
     return (
         <div>
-            <h1>{episode.title}</h1>
-            <Image className="rounded" src={episode.image} alt={episode.title} />
+            <AnimeInfo title={episode.title} description={episode.description} image={episode.image} />
             <div>
                 <div style={{
                     position: "absolute",

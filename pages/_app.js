@@ -51,7 +51,8 @@ export default function App({ Component, pageProps }) {
             <Component {...pageProps} />
             <footer style={{
                 position: 'relative',
-                textAlign: 'center'
+                textAlign: 'center',
+                bottom: 0,
             }}>Tushin Kulshreshtha © 2023</footer>
         </>
     )

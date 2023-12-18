@@ -1,0 +1,27 @@
+.wrapper {
+    display: flex;
+    align-items: stretch;
+    margin: 30px 10px;
+}
+
+.image {
+    border-radius: 10px;
+}
+
+@media (max-width: 778px) {
+
+    .wrapper {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: 30px 10px;
+    }
+
+    .image {
+        border-radius: 10px;
+        width: 23em;
+        height: 30em;
+        margin: 20px;
+    }
+
+}
