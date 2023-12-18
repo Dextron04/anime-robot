@@ -2,7 +2,9 @@
 const nextConfig = {}
 
 module.exports = {
+
     images: {
         domains: ['img.flawlessfiles.com']
     },
+    reactStrictMode: false,
 }

@@ -6,6 +6,9 @@ import ReactPlayer from "react-player";
 import { Image } from "react-bootstrap";
 import React from "react";
 import AnimeInfo from "../../components/AnimeInfo";
+import styles from '../../styles/anime.module.css'
+import { Button } from "@mui/material";
+import { style } from "@mui/system";
 
 
 
@@ -52,12 +55,7 @@ export default function Episode() {
 
     if (!episode) {
         // Handle the case when episode is null (not fetched yet)
-        return <ClimbingBoxLoader color="white" style={{
-            position: "absolute",
-            top: '12em',
-            left: '30em',
-            fontSize: '23px'
-        }} />;
+        return <ClimbingBoxLoader className={styles.loader} color="white" />;
     }
 
     const handleId = (id) => {
@@ -69,36 +67,39 @@ export default function Episode() {
 
     return (
         <div>
-            <AnimeInfo title={episode.title} description={episode.description} image={episode.image} />
-            <div>
-                <div style={{
-                    position: "absolute",
-                    left: "30rem",
-                    bottom: "14rem",
-                }}>
+            <div className={styles.anime_wrapper}>
+                <AnimeInfo title={episode.title} description={episode.description} image={episode.image} />
+                <div >
                     {subtitles && link && (
                         <ReactPlayer
+                            width='100%'
+                            height='100%'
                             url={link}
+                            playing={true}
+                            muted={true}
+                            loop={true}
                             controls
                             config={{
                                 file: {
-                                    attributes: {
-                                        crossOrigin: "",
-                                    },
+                                    // attributes: {
+                                    //     crossOrigin: "",
+                                    // },
                                     tracks: subTitleTracks,
                                 },
                             }}
                         />
                     )}
                 </div>
+            </div>
+            <div>
                 <br />
                 <br />
-                <div className="container text-center">
-                    <div className="d-flex flex-wrap justify-content-center">
+                <div >
+                    <div className={styles.episode_wrapper}>
                         {episode.episodes.map((episodeData, index) => (
                             <React.Fragment key={episodeData.id}>
-                                {(index > 0 && index % buttonsPerRow === 0) && <div className="w-100"></div>}
-                                <button className="btn btn-light mx-2 my-2" onClick={() => handleId(episodeData.id)}>
+                                {/* {(index > 0 && index % buttonsPerRow === 0) && <div className="w-100"></div>} */}
+                                <button type="button" className="btn btn-light" onClick={() => handleId(episodeData.id)}>
                                     {episodeData.number}
                                 </button>
                             </React.Fragment>

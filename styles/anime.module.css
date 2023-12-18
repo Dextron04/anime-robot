@@ -8,6 +8,23 @@
     border-radius: 10px;
 }
 
+.episode_wrapper {
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(5, 2em);
+    justify-content: center;
+    gap: 10px;
+    margin: 10px 10px 10px 10px;
+    padding-left: 10px;
+}
+
+.loader {
+    position: "absolute";
+    top: 12em;
+    left: 30em;
+    font-size: 23px;
+}
+
 @media (max-width: 778px) {
 
     .wrapper {
@@ -22,6 +39,40 @@
         width: 23em;
         height: 30em;
         margin: 20px;
+    }
+
+    .anime_wrapper {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: 30px 10px;
+    }
+
+    .episode_wrapper {
+        position: relative;
+        display: grid;
+        grid-template-columns: repeat(5, 2em);
+        justify-content: center;
+        gap: 30px;
+    }
+
+    .episode_btn {
+        width: 2em;
+        height: 2em;
+        font-size: 0.8em;
+        min-width: 50px;
+    }
+
+    .video {
+        height: 200px;
+        width: 10px;
+    }
+
+    .loader {
+        position: relative;
+        left: 100px;
+        top: 10px;
+        font-size: 23px;
     }
 
 }
