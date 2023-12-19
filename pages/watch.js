@@ -6,7 +6,7 @@ import styles from '../styles/post.module.css'
 
 
 export default function Watch() {
-    const [inputText, setInputText] = useState(' ');
+    const [inputText, setInputText] = useState('');
     const [data, setData] = useState({ results: [] });
     const [animeData, setAnimeData] = useState('');
     const [id, setId] = useState('');
@@ -45,14 +45,15 @@ export default function Watch() {
 
     }, [data.results, id, inputText])
 
+
     return (
-        <div>
-            <h1>
+        <div className={styles.body}>
+            <h1 className={styles.title}>
                 Watch
             </h1>
-            <h4>
+            <div className={styles.search_bar} placeholder="Search">
                 <input id="search" className="form-control me-2" type="search" placeholder="Search" aria-label="Search" value={inputText} onChange={handleSearch} style={{ width: '100%' }} />
-            </h4>
+            </div>
             <div className={styles.container}>
                 {Array.isArray(data.results) && data.results.length > 0 ? (
                     data.results.map((item) => (

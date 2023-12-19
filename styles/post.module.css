@@ -5,13 +5,33 @@
     justify-content: center;
 }
 
+.body {
+    background-size: cover;
+}
+
 @media (max-width: 778px) {
 
     /* Add mobile-specific styles here */
+    .title {
+        display: flex;
+        justify-content: center;
+        font-size: 1.5em;
+        backdrop-filter: blur(20px);
+        border-radius: 10px;
+        color: aliceblue;
+    }
+
     .container {
         display: grid;
         grid-template-columns: repeat(1, 20em);
         gap: 40px;
         justify-content: center;
+    }
+
+    .search_bar {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        margin: 10px 35px 10px 35px;
     }
 }

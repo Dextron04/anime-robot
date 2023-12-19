@@ -1,0 +1,52 @@
+.img_wrapper {
+    display: flex;
+    justify-content: center;
+    background-image: url('/levon-vardanyan-_EpaiWp5yC8-unsplash.jpg');
+    background-size: cover;
+
+}
+
+.update {
+    border-radius: 20px;
+    /* Increased border radius */
+    mix-blend-mode: color-burn;
+    backdrop-filter: blur(10px);
+    /* Added blur effect */
+    font-size: 20px;
+    margin: 10px;
+    /* Increased font size */
+}
+
+.text {
+    margin: 20px;
+}
+
+@media (max-width: 778px) {
+    .img_wrapper {
+        display: flex;
+        justify-content: center;
+        background-image: url('/taylor-van-riper-yQorCngxzwI-unsplash.jpg');
+        /* background-image: none; */
+        background-color: transparent;
+        background-size: cover;
+        border-radius: 20px;
+        mix-blend-mode: overlay;
+    }
+
+    .update {
+        border-radius: 20px;
+        /* Increased border radius */
+        mix-blend-mode: color-burn;
+        backdrop-filter: blur(10px);
+        /* Added blur effect */
+        font-size: 15px;
+        margin: 10px;
+        color: white;
+        /* Increased font size */
+    }
+
+    .text {
+        margin: 20px;
+    }
+
+}

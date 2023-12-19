@@ -13,9 +13,9 @@ const NavBar = () => {
     }, []);
 
     return (
-        <nav className="navbar navbar-expand-lg bg-body-tertiary">
+        <nav className="navbar sticky-top navbar-expand-lg bg-body-tertiary" style={{ backgroundColor: '#e3f2fd', borderRadius: '10px', margin: '20px' }}>
             <div className="container-fluid">
-                {/* <Image alt='svg' src={'https://drive.google.com/file/d/1DyRirqxahQTQbbfTvxZNIs4Vp2oCYa84/view?usp=sharing'} width={100} height={100} /> */}
+
                 <a>Anime Robot 🤖</a>
 
                 {/* NavBar collapse toggle button */}
@@ -34,14 +34,15 @@ const NavBar = () => {
                             <Link className={router.pathname == "/watch" ? "nav-link active" : "nav-link"} href="/watch">Watch</Link>
                         </li>
                     </ul>
-                    <form className="d-flex" role="search">
+                    {/* <form className="d-flex" role="search">
                         <input disabled className="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
                         <button disabled className="btn btn-outline-success" type="submit">Search</button>
-                    </form>
+                    </form> */}
                 </div>
             </div>
         </nav>
     );
 };
+
 
 export default NavBar;
