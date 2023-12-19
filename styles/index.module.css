@@ -30,13 +30,11 @@
         background-color: transparent;
         background-size: cover;
         border-radius: 20px;
-        mix-blend-mode: overlay;
     }
 
     .update {
         border-radius: 20px;
         /* Increased border radius */
-        mix-blend-mode: color-burn;
         backdrop-filter: blur(10px);
         /* Added blur effect */
         font-size: 15px;
