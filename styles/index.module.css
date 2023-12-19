@@ -27,11 +27,13 @@
     .img_wrapper {
         display: flex;
         justify-content: center;
-        background-image: url('/taylor-van-riper-yQorCngxzwI-unsplash.jpg');
+        background-image: none;
         background-color: transparent;
         background-size: cover;
         border-radius: 20px;
         mix-blend-mode: normal;
+        /* aspect-ratio: auto 250/525; */
+        backdrop-filter: blur(1px);
     }
 
     .update {

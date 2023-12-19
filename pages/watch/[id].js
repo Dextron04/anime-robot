@@ -18,6 +18,7 @@ export default function Episode() {
     const [link, setLink] = useState(null);
     const [subtitles, setSubtitles] = useState([]);
     const [subTitleTracks, setSubtitleTracks] = useState([]);
+    const [currentPage, setCurrentPage] = useState(1);
 
     useEffect(() => {
         // Fetch episode data based on the ID
@@ -60,6 +61,12 @@ export default function Episode() {
         console.log(episodeId);
     };
 
+    const episodesPerPage = 50;
+    const indexOfFirstEpisode = currentPage * episodesPerPage;
+    const indexOfLastEpisode = indexOfFirstEpisode - episodesPerPage;
+
+    const currentEpisodes = episode.episodes.slice(indexOfLastEpisode, indexOfFirstEpisode);
+
     return (
         <div>
             <div className={styles.anime_wrapper}>
@@ -71,13 +78,29 @@ export default function Episode() {
                 <br />
                 <div >
                     <div className={styles.episode_wrapper}>
-                        {episode.episodes.map((episodeData, index) => (
+                        {currentEpisodes.map((episodeData, index) => (
                             <React.Fragment key={episodeData.id}>
-                                <button type="button" className="btn btn-light" onClick={() => handleId(episodeData.id)}>
+                                <button type="button" className={styles.episode_btn} onClick={() => handleId(episodeData.id)}>
                                     {episodeData.number}
                                 </button>
                             </React.Fragment>
                         ))}
+                    </div>
+                    <div className={styles.nav_btn}>
+                        <button
+                            className={styles.episode_btn}
+                            onClick={() => setCurrentPage(currentPage - 1)}
+                            disabled={currentPage === 1}
+                        >
+                            Previous
+                        </button>
+                        <button
+                            className={styles.episode_btn}
+                            onClick={() => setCurrentPage(currentPage + 1)}
+                            disabled={currentPage === Math.ceil(episode.episodes.length / episodesPerPage)}
+                        >
+                            Next
+                        </button>
                     </div>
                 </div>
             </div>
