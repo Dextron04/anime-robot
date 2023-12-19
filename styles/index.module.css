@@ -3,6 +3,7 @@
     justify-content: center;
     background-image: url('/levon-vardanyan-_EpaiWp5yC8-unsplash.jpg');
     background-size: cover;
+    mix-blend-mode: color-burn;
 
 }
 
