@@ -56,12 +56,28 @@ body {
         font-family: sans-serif;
         padding: 10px 20px;
         line-height: 1.6;
-        background-image: url("https://media4.giphy.com/media/2xu5zpSV3oqKcCSZ49/giphy.gif?cid=ecf05e47jnwq9kvzw6nhc7m71eu72y50td34v232pyebevp2&ep=v1_gifs_search&rid=giphy.gif&ct=g");
+        /* background-image: url("https://media4.giphy.com/media/2xu5zpSV3oqKcCSZ49/giphy.gif?cid=ecf05e47jnwq9kvzw6nhc7m71eu72y50td34v232pyebevp2&ep=v1_gifs_search&rid=giphy.gif&ct=g");
         background-size: contain;
         background-position: center;
-        background-attachment: fixed;
+        background-attachment: fixed; */
         /* animation: animateBg 20s linear infinite;
         background-image: linear-gradient(0deg, #52d3db, #3887be, #38419d, #200e3a, #52d3db, #3887be, #52d3db);
         background-size: 100% 700%; */
     }
+
+    body::before {
+        content: "";
+        position: fixed;
+        /* instead of background-attachment: fixed; */
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        background-image: url("https://media4.giphy.com/media/2xu5zpSV3oqKcCSZ49/giphy.gif?cid=ecf05e47jnwq9kvzw6nhc7m71eu72y50td34v232pyebevp2&ep=v1_gifs_search&rid=giphy.gif&ct=g");
+        background-size: contain;
+        background-position: center;
+        z-index: -1;
+        /* Keep the background behind your content */
+    }
+
 }

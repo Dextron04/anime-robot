@@ -31,6 +31,7 @@
         background-color: transparent;
         background-size: cover;
         border-radius: 20px;
+        mix-blend-mode: normal;
     }
 
     .update {
