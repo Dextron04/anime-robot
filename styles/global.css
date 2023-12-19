@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Silkscreen&display=swap');
+
 body,
 html {
     margin: 0;
@@ -5,7 +7,7 @@ html {
 }
 
 body {
-    font-family: sans-serif;
+    font-family: 'Silkscreen', sans-serif;
     padding: 10px 20px;
     line-height: 1.6;
     background-image: url("https://media4.giphy.com/media/ehgM1JRwNXAtaYDRzi/giphy.gif?cid=ecf05e47jnwq9kvzw6nhc7m71eu72y50td34v232pyebevp2&ep=v1_gifs_search&rid=giphy.gif&ct=g");

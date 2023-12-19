@@ -1,8 +1,5 @@
 import "../styles/global.css"
-import { useRouter } from "next/router"
-import 'bootstrap/dist/css/bootstrap.css'
-import { useEffect } from "react";
-import { SpeedInsights } from "@vercel/speed-insights/next"
+// import 'bootstrap/dist/css/bootstrap.css'
 import './watch';
 import NavBar from "../components/NavBar";
 
