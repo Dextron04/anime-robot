@@ -1,5 +1,6 @@
 import Link from "next/link";
 import React, { useState, useEffect } from "react";
+import Router, { useRouter } from "next/router";
 import { ClimbingBoxLoader } from "react-spinners";
 import Card from "../components/Card";
 import styles from '../styles/post.module.css'
@@ -12,20 +13,25 @@ export default function Watch() {
     const [id, setId] = useState('');
 
 
-    const handleSearch = async (event) => {
-        const textValue = event.target.value;
-        setInputText(textValue);
-    }
+    const router = useRouter();
+    const { search } = router.query;
 
     useEffect(() => {
-        console.log(inputText);
+        setInputText(search);
+    }, [search]);
+
+
+    // const handleSearch = async (event) => {
+    //     const textValue = event.target.value;
+    //     setInputText(textValue);
+    // }
+
+    useEffect(() => {
         fetch(`https://consumet-api-rust.vercel.app/anime/zoro/${inputText}?page=1`)
             .then((response) => response.json())
             .then((jsonData) => {
                 setData(jsonData);
                 setId(data.results[0].id);
-                console.log(id);
-                // console.log(jsonData);
             })
             .catch((error) => {
                 console.error('Error fetching data:', error);
@@ -37,7 +43,6 @@ export default function Watch() {
             .then((response) => response.json())
             .then((animeData) => {
                 setAnimeData(animeData);
-                console.log(animeData);
             })
             .catch((error) => {
                 console.error('Error fetching data:', error);
@@ -46,13 +51,15 @@ export default function Watch() {
     }, [data.results, id, inputText])
 
 
+
+
     return (
         <div className={styles.body}>
             <h1 className={styles.title}>
                 Watch
             </h1>
             <div className={styles.search_bar} placeholder="Search">
-                <input id="search" className="form-control me-2" type="search" placeholder="Search" aria-label="Search" value={inputText} onChange={handleSearch} style={{ width: '100%' }} />
+                {/* <input id="search" className="form-control me-2" type="search" placeholder="Search" aria-label="Search" value={inputText} onChange={handleSearch} style={{ width: '100%' }} /> */}
             </div>
             <div className={styles.container}>
                 {Array.isArray(data.results) && data.results.length > 0 ? (

@@ -1,16 +1,28 @@
 import React from 'react';
 import 'bootstrap/dist/css/bootstrap.css'
-import { useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { useRouter } from "next/router"
 
 
 const NavBar = () => {
+
+    const [inputValue, setInputValue] = useState('');
+
     const router = useRouter();
     useEffect(() => {
         import('bootstrap/dist/js/bootstrap.bundle');
     }, []);
+
+    const handleSearch = (event) => {
+        setInputValue(event.target.value);
+    }
+
+    const handleButtonClick = () => {
+        event.preventDefault();
+        router.push(`/watch?search=${inputValue}`);
+    }
 
     return (
         <nav className="navbar sticky-top navbar-expand-lg bg-body-tertiary" style={{ backgroundColor: '#e3f2fd', borderRadius: '10px', margin: '20px' }}>
@@ -34,10 +46,10 @@ const NavBar = () => {
                             <Link className={router.pathname == "/watch" ? "nav-link active" : "nav-link"} href="/watch">Watch</Link>
                         </li>
                     </ul>
-                    {/* <form className="d-flex" role="search">
-                        <input disabled className="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
-                        <button disabled className="btn btn-outline-success" type="submit">Search</button>
-                    </form> */}
+                    <form className="d-flex" role="search">
+                        <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search" value={inputValue} onChange={handleSearch} />
+                        <button className="btn btn-outline-success" type="submit" onClick={handleButtonClick} >Search</button>
+                    </form>
                 </div>
             </div>
         </nav>

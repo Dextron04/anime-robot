@@ -14,7 +14,9 @@ const Home = (props) => {
                 <p className={styles.text}>
                     Updates:<br />
                     {/* - Updated design<br /> */}
-                    - FIXED: Subtitles not showing up<br />
+                    - FIXED: Search Bar and volatile search results<br />
+                    - REMOVED: Separate Watch search bar <br />
+                    - UPDATE: Updated Watch design for pc view <br />
                     {/* - Updated specific anime pages<br /> */}
                     Recommendations:<br />
                     - Use on a smartphone for better experience<br />

@@ -70,6 +70,7 @@ export default function Episode() {
 
     return (
         <div>
+            <h1 className={styles.title}>{episode.title}</h1>
             <div className={styles.anime_wrapper}>
                 <AnimeInfo title={episode.title} description={episode.description} image={episode.image} />
                 <Player className={styles.video} subTitleTracks={subTitleTracks} link={link} subtitles={subtitles} />

@@ -7,7 +7,7 @@ const Card = ({ title, imageSrc, link, id, description }) => {
         <div>
             <div className={styles.container}>
                 <div className={styles.wrapper}>
-                    {console.log(imageSrc)}
+                    {/* {console.log(imageSrc)} */}
                     <Image alt={title} src={imageSrc} className={styles.banner_image} width={200} height={350} />
                     <h1 className={styles.h1}>{title}</h1>
                     <p className={styles.p}>{description}</p>
