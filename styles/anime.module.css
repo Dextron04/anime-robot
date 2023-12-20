@@ -1,11 +1,36 @@
 .wrapper {
+    display: grid;
+    grid-template-columns: repeat(2, 40em);
+    gap: 40px;
+    /* justify-content: baseline; */
+    margin: 79px 1px 69px;
+    backdrop-filter: blur(20px);
+    border-radius: 20px;
+}
+
+.video {
+    width: 68%;
+    height: 88%;
+}
+
+.anime_wrapper {
     display: flex;
-    align-items: stretch;
-    margin: 30px 10px;
+    grid-template-rows: repeat(2, 20em);
+    justify-content: flex-start;
+
 }
 
 .image {
+    display: flex;
+    justify-content: center;
+    margin: 20px;
     border-radius: 10px;
+}
+
+.description {
+    margin: 20px;
+    text-decoration: solid;
+    color: white;
 }
 
 .episode_wrapper {
@@ -32,7 +57,6 @@
         grid-template-columns: repeat(1, 20em);
         gap: 40px;
         justify-content: center;
-        ;
         margin: 30px 10px;
         backdrop-filter: blur(20px);
         border-radius: 20px;

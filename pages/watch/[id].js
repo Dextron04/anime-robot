@@ -41,6 +41,7 @@ export default function Episode() {
                         default: false,
                     }))
                 );
+                console.log(subTitleTracks)
             } catch (error) {
                 console.error('Error fetching episode data:', error);
             }
@@ -71,7 +72,7 @@ export default function Episode() {
         <div>
             <div className={styles.anime_wrapper}>
                 <AnimeInfo title={episode.title} description={episode.description} image={episode.image} />
-                <Player subTitleTracks={subTitleTracks} link={link} subtitles={subtitles} />
+                <Player className={styles.video} subTitleTracks={subTitleTracks} link={link} subtitles={subtitles} />
             </div>
             <div>
                 <br />

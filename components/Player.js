@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactPlayer from 'react-player';
 
-const Player = ({ subTitleTracks, subtitles, link }) => {
+const Player = ({ subTitleTracks, subtitles, link, subtitle }) => {
     return (
         <div >
             {subtitles && link && (
@@ -15,10 +15,17 @@ const Player = ({ subTitleTracks, subtitles, link }) => {
                     controls
                     config={{
                         file: {
-                            // attributes: {
-                            //     crossOrigin: "",
-                            // },
-                            tracks: subTitleTracks,
+                            attributes: {
+                                crossOrigin: 'true',
+                            },
+                            tracks:
+                                subTitleTracks.map((tracks) => ({
+                                    kind: 'subtitles',
+                                    src: tracks.src,
+                                    srcLang: tracks.srcLang,
+                                    default: tracks.default,
+
+                                }))
                         },
                     }}
                 />
