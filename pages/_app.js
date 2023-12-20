@@ -2,6 +2,7 @@ import "../styles/global.css"
 // import 'bootstrap/dist/css/bootstrap.css'
 import './watch';
 import NavBar from "../components/NavBar";
+import { SpeedInsights } from "@vercel/speed-insights/next"
 
 
 
@@ -19,6 +20,8 @@ export default function App({ Component, pageProps }) {
                 textAlign: 'center',
                 bottom: 0,
             }}>Tushin Kulshreshtha © 2023</footer>
+            <SpeedInsights />
+
         </>
     )
 }
