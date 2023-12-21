@@ -45,7 +45,7 @@ const NavBar = () => {
                                 <Link className={router.pathname == "/" ? "nav-link active" : "nav-link"} href="/">Home</Link>
                             </li>
                             <li className="nav-item">
-                                <Link className={router.pathname == "/about" ? "nav-link active" : "nav-link"} href="/about">About</Link>
+                                {/* <Link className={router.pathname == "/about" ? "nav-link active" : "nav-link"} href="/about">About</Link> */}
                             </li>
                             <li className="nav-item">
                                 <Link className={router.pathname == "/watch" ? "nav-link active" : "nav-link"} href="/watch">Watch</Link>
