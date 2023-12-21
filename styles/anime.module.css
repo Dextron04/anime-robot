@@ -1,22 +1,40 @@
+@import url('https://fonts.googleapis.com/css2?family=Inconsolata&family=Silkscreen&display=swap');
+
 .wrapper {
     display: grid;
     grid-template-columns: repeat(2, 40em);
     gap: 40px;
     /* justify-content: baseline; */
-    margin: 79px 1px 69px;
+    margin: 79px 300px 69px;
     backdrop-filter: blur(20px);
     border-radius: 20px;
 }
 
-.video {
+.title {
+    display: flex;
+    font-size: 40px;
+    font-family: 'Silkscreen', sans-serif;
+    font-weight: bold;
+    justify-content: center;
+    color: #fff;
+    backdrop-filter: blur(20px);
+    border-radius: 10px;
+    color: aliceblue;
+    padding: 10px;
+    margin: auto;
+}
+
+
+/* .video {
     width: 68%;
     height: 88%;
-}
+} */
 
 .anime_wrapper {
     display: grid;
-    grid-template-columns: repeat(1, auto);
-    justify-content: flex-start;
+    grid-template-rows: repeat(2, auto);
+    justify-content: center;
+    margin: 79px 299px 40px;
 
 }
 
@@ -36,12 +54,12 @@
 .episode_wrapper {
     position: relative;
     display: grid;
-    grid-template-columns: repeat(5, 2em);
+    grid-template-columns: repeat(5, 7em);
     justify-content: center;
     gap: 10px;
     backdrop-filter: blur(10px);
     border-radius: 20px;
-    margin: 1px 565px 58px;
+    margin: 1px 920px 58px;
     padding: 15px;
 }
 
@@ -90,7 +108,7 @@
 .nav_btn {
     display: flex;
     justify-content: center;
-    margin: 10px 530px 41px;
+    margin: 10px 1000px 41px;
     gap: 10px;
     text-decoration: solid;
     text-shadow: white 1px 0 3px;
@@ -114,10 +132,11 @@
     .title {
         display: flex;
         justify-content: center;
-        font-size: 1.5em;
+        font-size: 1em;
         backdrop-filter: blur(20px);
         border-radius: 10px;
         color: aliceblue;
+        padding: 10px;
     }
 
     .image {
@@ -197,7 +216,6 @@
         justify-content: center;
         margin: 10px;
         text-decoration: solid;
-        text-shadow: white 1px 0 3px;
 
     }
 

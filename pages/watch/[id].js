@@ -50,7 +50,7 @@ export default function Episode() {
         if (id) {
             fetchEpisodeData(); // Fetch data when the ID is available
         }
-    }, [episodeId, id, link, subtitles]);
+    }, [episodeId, id, link, subTitleTracks, subtitles]);
 
     if (!episode) {
         // Handle the case when episode is null (not fetched yet)

@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Inconsolata&family=Silkscreen&display=swap');
+
 .container {
     display: grid;
     margin: 10px;
@@ -6,8 +8,23 @@
     justify-content: center;
 }
 
+.title {
+    display: flex;
+    font-size: 70px;
+    font-family: 'Silkscreen', sans-serif;
+    font-weight: bold;
+    justify-content: center;
+}
+
 .body {
     background-size: cover;
+}
+
+.loader {
+    position: relative;
+    top: 8em;
+    left: 0em;
+    font-size: 100px;
 }
 
 @media (max-width: 778px) {
