@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { useRouter } from "next/router"
+import styles from '../styles/index.module.css'
 
 
 const NavBar = () => {
@@ -23,6 +24,10 @@ const NavBar = () => {
         event.preventDefault();
         router.push(`/watch?search=${inputValue}`);
     }
+
+    const handleBuyMeACoffeeClick = () => {
+        window.open('https://www.buymeacoffee.com/dextron', '_blank');
+    };
 
 
     return (
@@ -44,6 +49,11 @@ const NavBar = () => {
                             </li>
                             <li className="nav-item">
                                 <Link className={router.pathname == "/watch" ? "nav-link active" : "nav-link"} href="/watch">Watch</Link>
+                            </li>
+                            <li>
+                                <button className={styles.logo} onClick={handleBuyMeACoffeeClick}>
+                                    <Image alt='svg' src='/bmc-full-logo.svg' width={100} height={25} />
+                                </button>
                             </li>
                         </ul>
                         <form className="d-flex" role="search">

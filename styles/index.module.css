@@ -1,9 +1,9 @@
 .img_wrapper {
     display: flex;
     justify-content: center;
-    background-image: url('/levon-vardanyan-_EpaiWp5yC8-unsplash.jpg');
+    /* background-image: url('/levon-vardanyan-_EpaiWp5yC8-unsplash.jpg');
     background-size: cover;
-    mix-blend-mode: overlay;
+    mix-blend-mode: overlay; */
     border-radius: 20px;
 
 }
@@ -11,13 +11,23 @@
 .update {
     border-radius: 20px;
     /* Increased border radius */
-    backdrop-filter: blur(10px);
+    /* backdrop-filter: blur(10px); */
     /* Added blur effect */
     font-size: 20px;
     margin: 10px;
     color: white;
     /* Increased font size */
 }
+
+.logo {
+    display: flex;
+    border-radius: 10px;
+    border-color: transparent;
+    background-color: transparent;
+    justify-content: center;
+    margin: 2px 6px 0px;
+}
+
 
 .text {
     margin: 20px;
