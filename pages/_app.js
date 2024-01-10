@@ -20,7 +20,7 @@ export default function App({ Component, pageProps }) {
                 position: 'relative',
                 textAlign: 'center',
                 bottom: 0,
-            }}>Tushin Kulshreshtha © 2023</footer>
+            }}>Tushin Kulshreshtha © 2024</footer>
             <SpeedInsights />
             <Analytics />
 
