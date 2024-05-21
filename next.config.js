@@ -4,7 +4,7 @@ const nextConfig = {}
 module.exports = {
 
     images: {
-        domains: ['img.flawlessfiles.com', 'drive.google.com']
+        domains: ['img.flawlessfiles.com', 'drive.google.com', 'cdn.noitatnemucod.net']
     },
     reactStrictMode: false,
 }

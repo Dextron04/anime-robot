@@ -24,11 +24,11 @@ export default function Episode() {
         // Fetch episode data based on the ID
         async function fetchEpisodeData() {
             try {
-                const response = await fetch(`https://dextron04-api.vercel.app/anime/zoro/info?id=${id}`); // Replace with your API endpoint
+                const response = await fetch(`https://dex-consumet-api.vercel.app/anime/zoro/info?id=${id}`); // Replace with your API endpoint
                 const data = await response.json();
                 setEpisode(data); // Update the episode state with the fetched data
 
-                const linkResponse = await fetch(`https://dextron04-api.vercel.app/anime/zoro/watch?episodeId=${episodeId}&server=vidstreaming`);
+                const linkResponse = await fetch(`https://dex-consumet-api.vercel.app/anime/zoro/watch?episodeId=${episodeId}&server=vidstreaming`);
                 console.log(episodeId);
                 const linkData = await linkResponse.json();
                 setLink(linkData.sources[0].url);

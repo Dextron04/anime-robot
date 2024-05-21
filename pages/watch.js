@@ -27,7 +27,7 @@ export default function Watch() {
     // }
 
     useEffect(() => {
-        fetch(`https://dextron04-api.vercel.app/anime/zoro/${inputText}?page=1`)
+        fetch(`https://dex-consumet-api.vercel.app/anime/zoro/${inputText}?page=1`)
             .then((response) => response.json())
             .then((jsonData) => {
                 setData(jsonData);
@@ -39,7 +39,7 @@ export default function Watch() {
 
 
         // Fetching anime info
-        fetch(`https://dextron04-api.vercel.app/anime/zoro/info?id=${id}`)
+        fetch(`https://dex-consumet-api.vercel.app/anime/zoro/info?id=${id}`)
             .then((response) => response.json())
             .then((animeData) => {
                 setAnimeData(animeData);
