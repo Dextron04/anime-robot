@@ -9,34 +9,11 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@aka_theos/react-hls-player": "^1.0.0",
-    "@consumet/extensions": "^1.5.2",
-    "@emotion/react": "^11.11.1",
-    "@emotion/styled": "^11.11.0",
-    "@headlessui/react": "^1.7.17",
-    "@mantine/carousel": "^7.2.2",
-    "@mantine/code-highlight": "^7.2.2",
-    "@mantine/core": "^7.2.2",
-    "@mantine/dates": "^7.2.2",
-    "@mantine/dropzone": "^7.2.2",
-    "@mantine/form": "^7.2.2",
-    "@mantine/hooks": "^7.2.2",
-    "@mantine/modals": "^7.2.2",
-    "@mantine/notifications": "^7.2.2",
-    "@mantine/nprogress": "^7.2.2",
-    "@mantine/spotlight": "^7.2.2",
-    "@mantine/tiptap": "^7.2.2",
-    "@mui/material": "^5.14.18",
-    "@tabler/icons-react": "^2.41.0",
-    "@tiptap/extension-link": "^2.1.12",
-    "@tiptap/react": "^2.1.12",
-    "@tiptap/starter-kit": "^2.1.12",
     "@vercel/analytics": "^1.1.1",
     "@vercel/speed-insights": "^1.0.2",
+    "animejs": "^3.2.2",
     "bootstrap": "^5.3.2",
     "bootstrap-icons": "^1.11.1",
-    "dayjs": "^1.11.10",
-    "embla-carousel-react": "^7.1.0",
     "fs": "^0.0.1-security",
     "hls.js": "^1.4.12",
     "next": "^14.1.1",
@@ -46,8 +23,9 @@
     "react-dom": "^18.2.0",
     "react-player": "^2.13.0",
     "react-spinners": "^0.13.8",
-    "react-video-js": "^0.1.96",
-    "video-react": "^0.16.0"
+    "swiper": "^11.1.4",
+    "three": "^0.164.1",
+    "vanta": "^0.5.24"
   },
   "devDependencies": {
     "@types/bootstrap": "^5.2.10",
@@ -59,7 +37,6 @@
     "eslint-config-next": "14.0.0",
     "postcss": "^8",
     "tailwindcss": "^3",
-    "typescript": "^5",
-    "video.js": "^8.6.1"
+    "typescript": "^5"
   }
 }

@@ -22,7 +22,7 @@ const NavBar = () => {
 
     const handleButtonClick = () => {
         event.preventDefault();
-        router.push(`/watch?search=${inputValue}`);
+        router.push(`/?search=${inputValue}`);
     }
 
     const handleBuyMeACoffeeClick = () => {
@@ -35,7 +35,6 @@ const NavBar = () => {
             <nav className="navbar sticky-top navbar-expand-lg bg-body-tertiary" style={{ borderRadius: '10px', margin: '20px', backgroundAttachment: 'none' }}>
                 <div className="container-fluid">
                     <a>Anime Robot 🤖</a>
-                    {/* NavBar collapse toggle button */}
                     <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                         <span className="navbar-toggler-icon"></span>
                     </button>
@@ -46,9 +45,6 @@ const NavBar = () => {
                             </li>
                             <li className="nav-item">
                                 {/* <Link className={router.pathname == "/about" ? "nav-link active" : "nav-link"} href="/about">About</Link> */}
-                            </li>
-                            <li className="nav-item">
-                                <Link className={router.pathname == "/watch" ? "nav-link active" : "nav-link"} href="/watch">Watch</Link>
                             </li>
                             <li>
                                 <button className={styles.logo} onClick={handleBuyMeACoffeeClick}>

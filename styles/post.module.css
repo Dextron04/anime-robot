@@ -3,9 +3,15 @@
 .container {
     display: grid;
     margin: 10px;
-    grid-template-columns: repeat(3, 25em);
-    gap: 40px;
+    gap: 10px;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 0fr));
+    justify-items: center;
     justify-content: center;
+}
+
+.loader_wrapper {
+    display: contents;
+    margin-top: 50%;
 }
 
 .title {
@@ -20,11 +26,15 @@
     background-size: cover;
 }
 
-.loader {
-    position: relative;
-    top: 8em;
-    left: 0em;
-    font-size: 100px;
+
+.cropped_image {
+    width: 350px;
+    height: 300px;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: scale(1.9);
 }
 
 @media (max-width: 778px) {
@@ -41,8 +51,8 @@
 
     .container {
         display: grid;
-        grid-template-columns: repeat(1, 20em);
-        gap: 40px;
+        grid-template-columns: repeat(auto-fill, minmax(100px, 0fr));
+        gap: 10px;
         justify-content: center;
     }
 

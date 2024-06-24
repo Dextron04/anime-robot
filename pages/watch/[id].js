@@ -24,11 +24,12 @@ export default function Episode() {
         // Fetch episode data based on the ID
         async function fetchEpisodeData() {
             try {
-                const response = await fetch(`https://dex-consumet-api.vercel.app/anime/zoro/info?id=${id}`); // Replace with your API endpoint
+                const response = await fetch(`https://dex-consumet-api.vercel.app/anime/gogoanime/info/${id}`); // Replace with your API endpoint
                 const data = await response.json();
                 setEpisode(data); // Update the episode state with the fetched data
+                console.log(episode);
 
-                const linkResponse = await fetch(`https://dex-consumet-api.vercel.app/anime/zoro/watch?episodeId=${episodeId}&server=vidstreaming`);
+                const linkResponse = await fetch(`https://dex-consumet-api.vercel.app/anime/gogoanime/watch/${episodeId}`);
                 console.log(episodeId);
                 const linkData = await linkResponse.json();
                 setLink(linkData.sources[0].url);
@@ -78,7 +79,7 @@ export default function Episode() {
             <div>
                 <br />
                 <br />
-                <div >
+                <div className={styles.buttons_wrapper} >
                     <div className={styles.episode_wrapper}>
                         {currentEpisodes.map((episodeData, index) => (
                             <React.Fragment key={episodeData.id}>

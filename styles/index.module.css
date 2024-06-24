@@ -8,16 +8,6 @@
 
 }
 
-.update {
-    border-radius: 20px;
-    /* Increased border radius */
-    /* backdrop-filter: blur(10px); */
-    /* Added blur effect */
-    font-size: 20px;
-    margin: 10px;
-    color: white;
-    /* Increased font size */
-}
 
 .logo {
     display: flex;
@@ -44,15 +34,6 @@
         mix-blend-mode: normal;
         /* aspect-ratio: auto 250/525; */
         backdrop-filter: blur(1px);
-    }
-
-    .update {
-        border-radius: 20px;
-        backdrop-filter: blur(10px);
-        font-size: 15px;
-        margin: 10px;
-        color: white;
-
     }
 
     .text {

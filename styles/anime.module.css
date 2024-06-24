@@ -24,6 +24,12 @@
     margin: auto;
 }
 
+.buttons_wrapper {
+    display: flex;
+
+
+}
+
 
 /* .video {
     width: 68%;

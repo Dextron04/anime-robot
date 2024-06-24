@@ -20,20 +20,12 @@
 }
 
 .wrapper {
-    width: 410px;
+    width: 310px;
     height: 650px;
 
 }
 
-.banner_image {
-    background-position: center;
-    background-size: cover;
-    height: 450px;
-    width: 350px;
-    border-radius: 12px;
-    border: 1px solid rgba(255, 255, 255, 0.255);
 
-}
 
 .h1 {
     font-family: 'Silkscreen', sans-serif;
@@ -102,7 +94,112 @@
     transition: all .3s ease;
 }
 
+.card {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 190px;
+    height: 254px;
+    background: rgb(46, 44, 44);
+    transition: all 300ms;
+    border-radius: 12px;
+    overflow: hidden;
+    position: relative;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    /* Example shadow effect */
+    transition: 0.3s;
+}
+
+.card:hover {
+    opacity: 0.8;
+    /* box-shadow: black 100px; */
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+}
+
+.banner_image {
+    background-position: center;
+    background-size: cover;
+    height: auto;
+    overflow: hidden;
+    width: 100%;
+    border-radius: 12px;
+    object-fit: cover;
+    border: 1px solid rgba(255, 255, 255, 0.255);
+
+}
+
+.title {
+    position: absolute;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    /* Semi-transparent background for the title */
+    color: white;
+    width: 100%;
+    text-align: center;
+    padding: 10px 0;
+    /* Adjust padding as needed */
+    white-space: nowrap;
+    /* Prevents the text from wrapping */
+    overflow: hidden;
+    /* Hides text that overflows the container */
+    text-overflow: ellipsis;
+    /* Adds an ellipsis to indicate overflow */
+    font-size: 12px;
+    font-weight: 500;
+}
+
 @media (max-width: 778px) {
+
+    .card {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 90px;
+        height: 120px;
+        background: rgb(46, 44, 44);
+        transition: all 300ms;
+        border-radius: 12px;
+        overflow: hidden;
+        position: relative;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+        /* Example shadow effect */
+        transition: 0.3s;
+    }
+
+    .card:hover {
+        opacity: 0.8;
+        box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+    }
+
+    .banner_image {
+        background-position: center;
+        background-size: cover;
+        height: auto;
+        width: 100%;
+        border-radius: 12px;
+        object-fit: cover;
+        border: 1px solid rgba(255, 255, 255, 0.255);
+    }
+
+    .title {
+        position: absolute;
+        bottom: 0;
+        background: rgba(0, 0, 0, 0.5);
+        /* Semi-transparent background for the title */
+        color: white;
+        width: 100%;
+        text-align: center;
+        padding: 5px 0;
+        /* Adjust padding as needed */
+        white-space: wrap;
+        /* Prevents the text from wrapping */
+        overflow: hidden;
+        /* Hides text that overflows the container */
+        text-overflow: ellipsis;
+        /* Adds an ellipsis to indicate overflow */
+        font-size: 5px;
+        font-weight: 500;
+    }
 
     /* Add mobile-specific styles here */
     .wrapper {
@@ -127,15 +224,7 @@
 
     }
 
-    .banner_image {
-        background-image: url(https://images.unsplash.com/photo-1641326201918-3cafc641038e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1887&q=80);
-        background-position: center;
-        background-size: cover;
-        height: 340px;
-        width: 250px;
-        border-radius: 12px;
-        border: 1px solid rgba(255, 255, 255, 0.255)
-    }
+
 
     .h1 {
         font-family: 'Silkscreen', sans-serif;
