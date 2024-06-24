@@ -4,9 +4,11 @@ import styles from '../styles/card.module.css'
 
 const Card = ({ title, imageSrc, link, id, description }) => {
     return (
-        <a href={`/watch/${id}`}>
-            <div className={styles.card}>
-                <Image alt={title} src={imageSrc} className={styles.banner_image} width={100} height={250} />
+        <a style={{ textDecoration: 'none' }} href={`/watch/${id}`}>
+            <div className={styles.card_container}>
+                <div className={styles.card}>
+                    <Image alt={title} src={imageSrc} className={styles.banner_image} width={100} height={250} />
+                </div>
                 <div className={styles.title}>{title}</div>
             </div>
         </a>

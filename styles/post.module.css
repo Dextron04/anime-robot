@@ -2,11 +2,12 @@
 
 .container {
     display: grid;
-    margin: 10px;
+    /* margin: 10px; */
     gap: 10px;
     grid-template-columns: repeat(auto-fill, minmax(200px, 0fr));
     justify-items: center;
     justify-content: center;
+    text-decoration: none;
 }
 
 .loader_wrapper {
@@ -52,7 +53,7 @@
     .container {
         display: grid;
         grid-template-columns: repeat(auto-fill, minmax(100px, 0fr));
-        gap: 10px;
+        /* gap: 10px; */
         justify-content: center;
     }
 

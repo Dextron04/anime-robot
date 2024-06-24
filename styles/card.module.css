@@ -19,81 +19,6 @@
 
 }
 
-.wrapper {
-    width: 310px;
-    height: 650px;
-
-}
-
-
-
-.h1 {
-    font-family: 'Silkscreen', sans-serif;
-    color: rgba(255, 255, 255, 0.98);
-    text-transform: uppercase;
-    font-size: 1.8rem;
-    margin: 5px;
-}
-
-.p {
-    color: #fff;
-    font-family: 'Lato', sans-serif;
-    text-align: center;
-    font-size: 0.8rem;
-    line-height: 150%;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-}
-
-.button_wrapper {
-    margin-top: 18px;
-}
-
-.btn {
-    border: none;
-    padding: 12px 24px;
-    border-radius: 24px;
-    font-size: 12px;
-    font-size: 0.8rem;
-    letter-spacing: 2px;
-    cursor: pointer;
-    text-decoration: none;
-}
-
-.btn+.btn {
-    margin-left: 10px;
-}
-
-.outline {
-    background: transparent;
-    color: rgba(0, 212, 255, 0.9);
-    border: 1px solid rgba(0, 212, 255, 0.6);
-    transition: all .3s ease;
-
-}
-
-.outline:hover {
-    transform: scale(1.125);
-    color: rgba(255, 255, 255, 0.9);
-    border-color: rgba(255, 255, 255, 0.9);
-    transition: all .3s ease;
-}
-
-.fill {
-    background: rgba(0, 212, 255, 0.9);
-    color: rgba(255, 255, 255, 0.95);
-    filter: drop-shadow(0);
-    font-weight: bold;
-    transition: all .3s ease;
-}
-
-.fill:hover {
-    transform: scale(1.125);
-    border-color: rgba(255, 255, 255, 0.9);
-    filter: drop-shadow(0 10px 5px rgba(0, 0, 0, 0.125));
-    transition: all .3s ease;
-}
-
 .card {
     display: flex;
     justify-content: center;
@@ -102,12 +27,13 @@
     height: 254px;
     background: rgb(46, 44, 44);
     transition: all 300ms;
-    border-radius: 12px;
+    border-radius: 3px;
     overflow: hidden;
     position: relative;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
     /* Example shadow effect */
     transition: 0.3s;
+    flex-direction: column;
 }
 
 .card:hover {
@@ -122,30 +48,36 @@
     height: auto;
     overflow: hidden;
     width: 100%;
-    border-radius: 12px;
+    border-radius: 5px;
     object-fit: cover;
     border: 1px solid rgba(255, 255, 255, 0.255);
 
 }
 
 .title {
-    position: absolute;
-    bottom: 0;
+    /* Adjusted styles for the title */
     background: rgba(0, 0, 0, 0.5);
-    /* Semi-transparent background for the title */
     color: white;
     width: 100%;
-    text-align: center;
-    padding: 10px 0;
-    /* Adjust padding as needed */
-    white-space: nowrap;
-    /* Prevents the text from wrapping */
-    overflow: hidden;
-    /* Hides text that overflows the container */
-    text-overflow: ellipsis;
-    /* Adds an ellipsis to indicate overflow */
+    text-align: justify;
+    padding: 5px 0;
     font-size: 12px;
+    /* Consider increasing this for readability */
+    text-decoration: none;
     font-weight: 500;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+
+}
+
+.card_container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* Center align the items if needed */
+    width: 190px;
+    /* Adjust width as needed */
 }
 
 @media (max-width: 778px) {
@@ -154,16 +86,17 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        width: 90px;
+        width: 100%;
         height: 120px;
         background: rgb(46, 44, 44);
         transition: all 300ms;
-        border-radius: 12px;
+        border-radius: 3px;
         overflow: hidden;
         position: relative;
         box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
         /* Example shadow effect */
         transition: 0.3s;
+        flex-direction: column;
     }
 
     .card:hover {
@@ -171,65 +104,38 @@
         box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
     }
 
+    .card_container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        /* Center align the items if needed */
+        width: 90px;
+        border-radius: 5px;
+        /* Adjust width as needed */
+    }
+
     .banner_image {
         background-position: center;
         background-size: cover;
         height: auto;
         width: 100%;
-        border-radius: 12px;
+        border-radius: 5px;
         object-fit: cover;
         border: 1px solid rgba(255, 255, 255, 0.255);
     }
 
     .title {
-        position: absolute;
+        /* Removed position: absolute; */
         bottom: 0;
         background: rgba(0, 0, 0, 0.5);
-        /* Semi-transparent background for the title */
         color: white;
-        width: 100%;
-        text-align: center;
+        width: 90%;
+        text-align: justify;
         padding: 5px 0;
-        /* Adjust padding as needed */
-        white-space: wrap;
-        /* Prevents the text from wrapping */
         overflow: hidden;
-        /* Hides text that overflows the container */
         text-overflow: ellipsis;
-        /* Adds an ellipsis to indicate overflow */
         font-size: 5px;
+        text-decoration: none;
         font-weight: 500;
-    }
-
-    /* Add mobile-specific styles here */
-    .wrapper {
-        width: 300px;
-        height: 415px;
-
-    }
-
-    .container {
-        backdrop-filter: blur(16px) saturate(180%);
-        -webkit-backdrop-filter: blur(16px) saturate(180%);
-        background-color: rgba(17, 25, 40, 0.25);
-        border-radius: 12px;
-        border: 1px solid rgba(255, 255, 255, 0.125);
-        padding: 38px;
-        filter: drop-shadow(0 30px 10px rgba(0, 0, 0, 0.125));
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        text-align: center;
-
-    }
-
-
-
-    .h1 {
-        font-family: 'Silkscreen', sans-serif;
-        color: rgba(255, 255, 255, 0.98);
-        text-transform: uppercase;
-        font-size: 1rem;
     }
 }
