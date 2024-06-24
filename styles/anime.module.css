@@ -2,9 +2,7 @@
 
 .wrapper {
     display: grid;
-    grid-template-columns: repeat(2, 40em);
-    gap: 40px;
-    /* justify-content: baseline; */
+    grid-template-columns: repeat(2, auto);
     margin: 79px 300px 69px;
     backdrop-filter: blur(20px);
     border-radius: 20px;
@@ -20,27 +18,20 @@
     backdrop-filter: blur(20px);
     border-radius: 10px;
     color: aliceblue;
-    padding: 10px;
-    margin: auto;
+    text-align: center;
 }
 
 .buttons_wrapper {
     display: flex;
-
+    flex-direction: column;
 
 }
-
-
-/* .video {
-    width: 68%;
-    height: 88%;
-} */
 
 .anime_wrapper {
     display: grid;
     grid-template-rows: repeat(2, auto);
     justify-content: center;
-    margin: 79px 299px 40px;
+    /* margin: 79px 299px 40px; */
 
 }
 
@@ -57,6 +48,18 @@
     color: white;
 }
 
+.player_wrapper {
+    display: grid;
+    justify-content: center;
+}
+
+.video {
+    display: flex;
+    justify-content: center;
+    width: 60em;
+    margin: 20px;
+}
+
 .episode_wrapper {
     position: relative;
     display: grid;
@@ -65,38 +68,19 @@
     gap: 10px;
     backdrop-filter: blur(10px);
     border-radius: 20px;
-    margin: 1px 920px 58px;
-    padding: 15px;
 }
 
 .episode_btn {
     display: flex;
-    height: 2em;
     font-size: 16px;
     justify-content: center;
     background-color: #222;
-    border-color: aliceblue;
     border-style: none;
     border-radius: 4px;
-    box-sizing: border-box;
     color: #fff;
-    cursor: pointer;
     font-weight: 700;
-    line-height: 1.5;
-    margin: 0;
-    max-width: none;
     min-height: 44px;
-    min-width: 10px;
-    outline: none;
-    overflow: hidden;
-    padding: 9px 20px 8px;
-    position: relative;
-    text-align: center;
-    text-transform: none;
-    user-select: none;
-    -webkit-user-select: none;
-    touch-action: manipulation;
-    width: 100%;
+    align-items: center;
 }
 
 .episode_btn:hover,
@@ -112,16 +96,18 @@
 }
 
 .nav_btn {
-    display: flex;
+    display: grid;
     justify-content: center;
-    margin: 10px 1000px 41px;
     gap: 10px;
     text-decoration: solid;
     text-shadow: white 1px 0 3px;
     backdrop-filter: blur(20px);
     padding: 10px;
     border-radius: 10px;
+    align-items: center;
+    grid-template-columns: repeat(2, 200px);
 }
+
 
 @media (max-width: 778px) {
 
@@ -152,6 +138,10 @@
         margin: 20px;
     }
 
+    .video {
+        width: 24em;
+    }
+
     .anime_wrapper {
         display: grid;
         grid-template-columns: repeat(1, auto);
@@ -161,53 +151,31 @@
     .episode_wrapper {
         position: relative;
         display: grid;
-        grid-template-columns: repeat(5, 2em);
+        grid-template-columns: repeat(5, 50px);
         justify-content: center;
         gap: 10px;
         backdrop-filter: blur(10px);
         border-radius: 20px;
-        margin: 1px 50px 39px;
         padding: 15px;
     }
 
     .episode_btn {
         display: flex;
-        height: 2em;
         font-size: 16px;
         justify-content: center;
         background-color: #222;
-        border-color: aliceblue;
         border-style: none;
         border-radius: 4px;
-        box-sizing: border-box;
         color: #fff;
-        cursor: pointer;
         font-weight: 700;
-        line-height: 1.5;
-        margin: 0;
-        max-width: none;
-        min-height: 44px;
-        min-width: 10px;
         outline: none;
         overflow: hidden;
-        padding: 9px 20px 8px;
-        position: relative;
-        text-align: center;
-        text-transform: none;
-        user-select: none;
-        -webkit-user-select: none;
-        touch-action: manipulation;
         width: 100%;
     }
 
     .episode_btn:hover,
     .episode_btn:focus {
         opacity: .75;
-    }
-
-    .video {
-        height: 200px;
-        width: 10px;
     }
 
     .loader {

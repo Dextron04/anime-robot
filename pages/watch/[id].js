@@ -74,36 +74,40 @@ export default function Episode() {
             <h1 className={styles.title}>{episode.title}</h1>
             <div className={styles.anime_wrapper}>
                 <AnimeInfo title={episode.title} description={episode.description} image={episode.image} />
-                <Player className={styles.video} subTitleTracks={subTitleTracks} link={link} subtitles={subtitles} />
             </div>
             <div>
                 <br />
                 <br />
-                <div className={styles.buttons_wrapper} >
-                    <div className={styles.episode_wrapper}>
-                        {currentEpisodes.map((episodeData, index) => (
-                            <React.Fragment key={episodeData.id}>
-                                <button type="button" className={styles.episode_btn} onClick={() => handleId(episodeData.id)}>
-                                    {episodeData.number}
-                                </button>
-                            </React.Fragment>
-                        ))}
+                <div className={styles.player_wrapper}>
+                    <div className={styles.video}>
+                        <Player subTitleTracks={subTitleTracks} link={link} subtitles={subtitles} />
                     </div>
-                    <div className={styles.nav_btn}>
-                        <button
-                            className={styles.episode_btn}
-                            onClick={() => setCurrentPage(currentPage - 1)}
-                            disabled={currentPage === 1}
-                        >
-                            Previous
-                        </button>
-                        <button
-                            className={styles.episode_btn}
-                            onClick={() => setCurrentPage(currentPage + 1)}
-                            disabled={currentPage === Math.ceil(episode.episodes.length / episodesPerPage)}
-                        >
-                            Next
-                        </button>
+                    <div className={styles.buttons_wrapper} >
+                        <div className={styles.episode_wrapper}>
+                            {currentEpisodes.map((episodeData, index) => (
+                                <React.Fragment key={episodeData.id}>
+                                    <button type="button" className={styles.episode_btn} onClick={() => handleId(episodeData.id)}>
+                                        {episodeData.number}
+                                    </button>
+                                </React.Fragment>
+                            ))}
+                        </div>
+                        <div className={styles.nav_btn}>
+                            <button
+                                className={styles.episode_btn}
+                                onClick={() => setCurrentPage(currentPage - 1)}
+                                disabled={currentPage === 1}
+                            >
+                                Previous
+                            </button>
+                            <button
+                                className={styles.episode_btn}
+                                onClick={() => setCurrentPage(currentPage + 1)}
+                                disabled={currentPage === Math.ceil(episode.episodes.length / episodesPerPage)}
+                            >
+                                Next
+                            </button>
+                        </div>
                     </div>
                 </div>
             </div>
