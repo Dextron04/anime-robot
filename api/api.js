@@ -1,8 +1,8 @@
 
 // Search Anime endpoint
-export const searchAnime = async (searchTerm) => {
+export const searchAnime = async (searchTerm, page) => {
     console.log("In server", searchTerm);
-    const response = await fetch(`https://dex-consumet-api.vercel.app/anime/gogoanime/${searchTerm}?page=1`);
+    const response = await fetch(`https://dex-consumet-api.vercel.app/anime/gogoanime/${searchTerm}?page=${page}`);
     const data = await response.json();
     console.log(data);
     return data;

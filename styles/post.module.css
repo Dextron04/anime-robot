@@ -38,6 +38,32 @@
     transform: scale(1.9);
 }
 
+.btn {
+    display: flex;
+    font-size: 16px;
+    justify-content: center;
+    background-color: #222;
+    border-style: none;
+    border-radius: 4px;
+    color: #fff;
+    font-weight: 700;
+    min-height: 44px;
+    align-items: center;
+    margin: 10px;
+    width: 150px;
+}
+
+.btn:hover {
+    background-color: #333;
+    cursor: pointer;
+}
+
+.btn_container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
 @media (max-width: 778px) {
 
     /* Add mobile-specific styles here */

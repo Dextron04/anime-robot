@@ -13,12 +13,11 @@ export default function App({ Component, pageProps }) {
         <>
             <NavBar />
             <Component {...pageProps} />
-            <div style={{ minHeight: '100vh', display: 'flex', flexDirection: 'column' }}>
-                <div style={{ flex: '1' }}></div>
+            <div style={{ display: 'flex', flexDirection: 'column', backgroundColor: 'black' }}>
                 <footer style={{
                     position: 'relative',
                     textAlign: 'center',
-                    bottom: 0,
+                    color: 'white',
                 }}>Tushin Kulshreshtha © 2024</footer>
             </div>
             <SpeedInsights />

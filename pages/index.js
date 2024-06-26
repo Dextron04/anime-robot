@@ -1,19 +1,9 @@
-import Link from "next/link";
 import React, { useState, useEffect } from "react";
 import Router, { useRouter } from "next/router";
 import { ClimbingBoxLoader } from "react-spinners";
 import Card from "../components/Card";
 import styles from '../styles/post.module.css'
 import { searchAnime, getTopAiring } from "../api/api";
-import Carousel from "../components/Carousel";
-import { Navigation, Pagination, Scrollbar, A11y } from 'swiper/modules';
-import { Swiper, SwiperSlide } from 'swiper/react';
-import Image from "next/image";
-
-import 'swiper/css';
-import 'swiper/css/navigation';
-import 'swiper/css/pagination';
-import 'swiper/css/scrollbar';
 
 
 export default function Watch() {
@@ -22,6 +12,11 @@ export default function Watch() {
     const [animeData, setAnimeData] = useState('');
     const [id, setId] = useState('');
     const [airData, setAirData] = useState("");
+    const [page, setPage] = useState(1);
+    const router = useRouter();
+
+    // The searched key word is sent here
+    const { search } = router.query;
 
     useEffect(() => {
         const getTop = async () => {
@@ -37,12 +32,6 @@ export default function Watch() {
         getTop();
     }, [])
 
-
-    const router = useRouter();
-
-    // The searched key word is sent here
-    const { search } = router.query;
-
     // The value gets added to the variable for further use.
     useEffect(() => {
         setInputText(search);
@@ -55,10 +44,10 @@ export default function Watch() {
         const fetchData = async () => {
             if (inputText) {
                 try {
-                    const searchData = await searchAnime(inputText);
+                    const searchData = await searchAnime(inputText, page);
                     setData(searchData);
                     setId(searchData.results[0].id);
-                    // console.log(searchData);
+                    console.log(searchData);
                 } catch (error) {
                     console.error('Error fetching data:', error);
                 }
@@ -69,26 +58,19 @@ export default function Watch() {
         };
 
         fetchData();
-    }, [inputText]);
+    }, [inputText, page]);
 
+    const handleNextPage = () => {
+        setPage(page => page + 1);
+    };
 
-
-    // useEffect(() => {
-
-
-    //     // Fetching anime info
-    //     fetch(`https://dex-consumet-api.vercel.app/anime/gogoanime/top-airing`)
-    //         .then((response) => response.json())
-    //         .then((animeData) => {
-    //             setAnimeData(animeData);
-    //         })
-    //         .catch((error) => {
-    //             console.error('Error fetching data:', error);
-    //         });
-
-    // }, [data.results, id, inputText])
-
-
+    const handlePreviousPage = () => {
+        if (page == 1) {
+            return;
+        } else {
+            setPage(page => page - 1);
+        }
+    };
 
 
     return (
@@ -100,31 +82,24 @@ export default function Watch() {
                             <Card title={item.title} imageSrc={item.image} id={item.id} hover />
                         </div>
                     ))
-                ) : <div className={styles.loader_wrapper}>
-                    <ClimbingBoxLoader color="white" size={20} />
+                ) : <div>
+                    <div style={{ color: 'white' }}>
+                        <div > -LOL Emptiness</div>
+                        <div>- Just hit previous if nothing is coming up</div>
+                    </div>
+                    <div className={styles.loader_wrapper}>
+                        <ClimbingBoxLoader color="white" size={20} />
+                    </div>
                 </div>
                 }
+            </div>
+            <div className={styles.btn_container}>
+                <button onClick={handleNextPage} className={styles.btn}>Next</button>
+                <button onClick={handlePreviousPage} className={styles.btn}>Previous</button>
             </div>
         </div>
     )
 }
-
-{/* <Swiper
-                spaceBetween={20} // Adjust space between slides
-                slidesPerView={2} // Adjust number of slides visible at once
-                onSlideChange={() => console.log('slide change')}
-                onSwiper={(swiper) => console.log(swiper)}
-            >
-                {Array.isArray(airData.results) && airData.results.length > 0 ? (
-                    airData.results.map((item) => (
-                        <SwiperSlide key={item.title}>
-                            <div className={styles.cropped_image}>
-                                <Image src={item.image} alt={item.title} width={800} height={500} priority />
-                            </div>
-                        </SwiperSlide>
-                    ))
-                ) : <div>LOL Emptiness</div>}
-            </Swiper> */}
 
 
 
