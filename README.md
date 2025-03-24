@@ -1,4 +1,6 @@
 # Welcome to Anime Robot!
+![Generated Image March 24, 2025 - 2_04AM png](https://github.com/user-attachments/assets/5c635c8a-c48d-439d-b70a-371bc28a4833)
+
 
 
 Greetings, anime enthusiasts and tech aficionados! 🤖🌟
